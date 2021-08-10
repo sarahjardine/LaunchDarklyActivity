@@ -19,4 +19,4 @@ Build Instructions
      - Under false click on "Add users..." and select Bob Loblaw.
 - Turn on and off feature flag to see the messages change
 
-NOTE: There is not a proper login screen, therefore the target individual users feature isn't really applicable. However, I wanted to show that I understand how users are added into the list and how this feature would work if there was the ablitiy to log in. 
+NOTE: There is not a proper login screen, therefore the target individual users feature isn't really applicable. However, I wanted to show that I understand how users are populated into the user list and how this feature would work if there was the ablitiy to log in. 
