@@ -20,7 +20,7 @@
 
       div1.appendChild(document.createTextNode('Finding new coffee flavors...'));
 
-      var ldclient = LDClient.initialize('610d81e2d2c9902588a65ca9', user1);
+      var ldclient = LDClient.initialize('<CLIENT_SIDE_ID>', user1);
 
       function render() {
         var shouldShow = ldclient.variation("coffee_flavors", false);
