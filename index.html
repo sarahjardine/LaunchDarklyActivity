@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LaunchDarkly</title>
+    <script src="https://unpkg.com/launchdarkly-js-client-sdk@2"></script>
+  </head>
+  <body>
+
+    <script>
+      var user1 = {
+        firstName: "Bob",
+        lastName: "Loblaw",
+        email: "bob@loblaw.com",
+        key: "bob_lob",
+      };
+
+      var div1 = document.createElement("div1");
+      document.body.appendChild(div1);
+
+      div1.appendChild(document.createTextNode('Finding new coffee flavors...'));
+
+      var ldclient = LDClient.initialize('610d81e2d2c9902588a65ca9', user1);
+
+      function render() {
+        var shouldShow = ldclient.variation("coffee_flavors", false);
+        var label = (shouldShow ?  'WAHOO!! 6 new': 'BOO!! No new' ) + ' coffee flavors for ' + user1.firstName + ' ' + user1.lastName;
+        div1.replaceChild(document.createTextNode(label), div1.firstChild);
+      }
+
+      ldclient.on('ready', render);
+      ldclient.on('change', render);
+    </script>
+<p>
+    <script>
+      var user2 = {
+        firstName: "Gob",
+        lastName: "Bluth",
+        email: "gob@ad.com",
+        key: "gob_bluth",
+      };
+
+      var div2 = document.createElement("div2");
+      document.body.appendChild(div2);
+
+      div2.appendChild(document.createTextNode('Finding new coffee makers...'));
+
+      var ldclient = LDClient.initialize('610d81e2d2c9902588a65ca9', user2);
+
+      function render() {
+        var shouldShow = ldclient.variation("moccamaster", false);
+        var label = (shouldShow ? 'SCORE!! The best coffee maker is found at https://us.moccamaster.com' : 'BOO!! No new coffee makers ' ) + 'for' + ' '  + user2.firstName + ' ' + user2.lastName;
+        div2.replaceChild(document.createTextNode(label), div2.firstChild);
+      }
+
+      ldclient.on('ready', render);
+      ldclient.on('change', render);
+    </script>
+
+</p>
+  </body>
+</html>
